@@ -90,6 +90,10 @@ nahrávky zůstávají na místě na další pokus.
 
 Termuxová verze zatím neumí diktovací příkazy (hashtagy/seznamy/nadpisy).
 
+Tip: na obecné diktování do libovolného pole na Androidu (obdoba
+`voice-type`) se hodí **Whisperian** — vlastní klávesnice, nebo integrace
+do Gboardu podržením mezerníku; detail v [README-android.md](README-android.md).
+
 ## API klíče
 
 - **ElevenLabs** (povinný): elevenlabs.io → profil → API keys. Scribe se

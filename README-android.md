@@ -161,6 +161,15 @@ znovu přes položku „Shortcut", ne z historie zkratek.
 Pokud Logseq právě běží a nový blok nevidí: Re-index grafu
 (⋯ → Re-index), případně graf zavřít a otevřít.
 
+## Tip: diktování do libovolné aplikace — Whisperian
+
+Voice-inbox řeší jeden konkrétní tok: hlasovka → deník. Na obecné
+diktování do jakéhokoli textového pole na Androidu je dobrá alternativa
+**Whisperian** — přepis řeči Whisperem, buď přes jeho vlastní klávesnici,
+nebo integrovaný do Google klávesnice (Gboard): stačí **podržet mezerník**
+a mluvit. Je to mobilní obdoba režimu `voice-type` z linuxové verze;
+s voice-inboxem se nevylučují, doplňují se.
+
 ## Aktualizace skriptu
 
 ```bash
