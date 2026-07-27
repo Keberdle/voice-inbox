@@ -7,10 +7,14 @@ volitelně text učeše Claude (interpunkce, výplňová slova).
 
 Dvě varianty jednoho nástroje:
 
-| Skript | Platforma | Spouštění |
+| Skript | Platforma | Jak pracuje |
 |---|---|---|
-| `voice-inbox-linux.sh` | Linux (testováno na Mint/Cinnamon, X11) | klávesová zkratka / terminál |
-| `voice-inbox-termux.sh` | Android (Termux + Termux:API + Termux:Widget) | widget na ploše |
+| `voice-inbox-linux.sh` | Linux (testováno na Mint/Cinnamon, X11) | klávesová zkratka: toggle nahrávání → zápis do deníku, nebo vepsání ke kurzoru |
+| `voice-inbox-termux.sh` | Android (Termux + Termux:API) | ikona na ploše: zpracuje nové hlasovky ze sledované složky → zápis do deníku podle data nahrávky |
+
+Android nemůže nahrávat na pozadí (systém od Androidu 12 podstrkává ticho),
+proto tam nahrává libovolný záznamník do složky a skript ji dávkově
+zpracovává — detailní návod v **[README-android.md](README-android.md)**.
 
 ## Jak to funguje
 
@@ -75,24 +79,16 @@ Na Waylandu `voice-type` spadne do režimu „zkopíruj do schránky + vlož Ctr
 
 ## Instalace (Android / Termux)
 
-1. Nainstaluj **Termux**, **Termux:API** a **Termux:Widget** — vše ze stejného
-   zdroje (F-Droid, nebo GitHub releases; nemíchat!).
-2. V Termuxu:
+Kompletní návod včetně známých zádrhelů (výběr zdroje Termuxu, SAF dialogy,
+zapečené cesty v ikonách, baterie) je v **[README-android.md](README-android.md)**.
 
-   ```bash
-   pkg install termux-api jq curl
-   termux-setup-storage
-   mkdir -p ~/.shortcuts ~/.config
-   cp voice-inbox-termux.sh ~/.shortcuts/voice-inbox.sh
-   chmod +x ~/.shortcuts/voice-inbox.sh
-   cp voice-inbox.conf.example ~/.config/voice-inbox.conf
-   nano ~/.config/voice-inbox.conf   # klíč + cesta k journals na /sdcard
-   ```
+Ve zkratce: záznamník ukládá hlasovky do sledované složky (`REC_DIR`),
+ťuknutí na ikonu Termux zkratky je přepíše a zapíše do deníků **podle data
+a času nahrávky** (hlasovka z večera zpracovaná ráno skončí ve včerejším
+deníku), zpracované soubory přesune do podsložky `zpracovano/`. Neúspěšné
+nahrávky zůstávají na místě na další pokus.
 
-3. Na plochu přidej widget „Termux:Widget“ → `voice-inbox.sh`.
-
-Termuxová verze zatím neumí diktovací příkazy (hashtagy/seznamy/nadpisy) —
-je to jednodušší starší varianta téhož.
+Termuxová verze zatím neumí diktovací příkazy (hashtagy/seznamy/nadpisy).
 
 ## API klíče
 

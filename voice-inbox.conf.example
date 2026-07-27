@@ -12,9 +12,12 @@ ELEVENLABS_API_KEY="xi-…"
 # --- Cesty --------------------------------------------------
 # Složka journals tvého Logseq grafu:
 LOGSEQ_JOURNALS="$HOME/Logseq/muj-graf/journals"
-# Mapa tagů pro diktované hashtagy (viz tagy.example.toml).
+# Mapa tagů pro diktované hashtagy (viz tagy.example.toml; jen Linux).
 # Nevyplněné = hashtagy se jen normalizují (malá písmena, bez diakritiky):
 #TAGY_TOML="$HOME/cesta/k/tagy.toml"
+# Jen Android: sledovaná složka, kam záznamník ukládá hlasovky —
+# VŠE co tam přistane se přepíše do deníku a přesune do zpracovano/:
+#REC_DIR="/storage/emulated/0/Recordings"
 
 # --- Volitelné ladění ----------------------------------------
 #LANG_CODE="cs"            # jazyk diktátu pro ElevenLabs Scribe
