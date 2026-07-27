@@ -1,0 +1,5 @@
+# lokální konfigurace a nahrávky sem nepatří
+voice-inbox.conf
+*.wav
+*.m4a
+*.mp3

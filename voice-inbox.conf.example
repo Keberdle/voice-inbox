@@ -1,0 +1,22 @@
+# ~/.config/voice-inbox.conf — konfigurace voice-inbox
+# Zkopíruj: cp voice-inbox.conf.example ~/.config/voice-inbox.conf
+# a uprav hodnoty. Soubor NEpatří do gitu (obsahuje klíče/osobní cesty).
+
+# --- API klíče ----------------------------------------------
+# Povinný — přepis řeči (elevenlabs.io -> profil -> API keys):
+ELEVENLABS_API_KEY="xi-…"
+# Volitelný — úprava přepisu Claudem (console.anthropic.com -> API Keys).
+# Prázdné/nevyplněné = zapisuje se surový přepis:
+#ANTHROPIC_API_KEY="sk-ant-…"
+
+# --- Cesty --------------------------------------------------
+# Složka journals tvého Logseq grafu:
+LOGSEQ_JOURNALS="$HOME/Logseq/muj-graf/journals"
+# Mapa tagů pro diktované hashtagy (viz tagy.example.toml).
+# Nevyplněné = hashtagy se jen normalizují (malá písmena, bez diakritiky):
+#TAGY_TOML="$HOME/cesta/k/tagy.toml"
+
+# --- Volitelné ladění ----------------------------------------
+#LANG_CODE="cs"            # jazyk diktátu pro ElevenLabs Scribe
+#INBOX_TAG="#inbox"        # tag přidávaný ke každému zápisu ("" = žádný)
+#CLAUDE_MODEL="claude-haiku-4-5-20251001"

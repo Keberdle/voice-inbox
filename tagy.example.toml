@@ -1,0 +1,25 @@
+# ==========================================================================
+# Mapa tagů pro diktované hashtagy — příklad
+# ==========================================================================
+# Formát: kanonicky = ["alias1", "alias2", …]
+# Kanonický tvar: kebab-case, bez diakritiky. Aliasy lišící se jen
+# diakritikou/velikostí písmen není nutné vypisovat — normalizace je
+# pozná sama (Vděčnost -> vdecnost).
+# Skript čte sekce [typove], [tematicke] a [pojmy]; členění je jen
+# pro přehlednost, chová se ke všem stejně.
+
+[typove]
+ukol = ["task", "todo"]
+poznamka = ["note"]
+napad = ["idea"]
+
+[tematicke]
+vdecnost = ["gratitude"]
+deti = []
+zdravi = []
+kava = ["kafe", "kofein"]
+3d-tisk = ["3D tisk"]
+
+[pojmy]
+komfortni-zona = ["komfortní zóna"]
+chci-koupit = ["chci si koupit"]
