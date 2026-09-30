@@ -201,6 +201,10 @@ výstupu zamaskuj klíče:
   `chmod 600`) — mimo dosah ostatních aplikací i synchronizace.
   Klíče nikdy nepatří do repozitáře ani na /sdcard.
 - Skript posílá data pouze na `api.elevenlabs.io` a `api.anthropic.com`.
+- Claude (pokud je zapnutý) dostává přepis jako pasivní data v `<prepis>`
+  a pokyny v system promptu; nadiktované otázky a příkazy nesmí plnit, jen
+  opsat. Odpověď se navíc kontroluje na délku (40–150 % originálu) — když
+  Claude přesto „splní úkol“ místo korektury, zapíše se surový přepis.
 - Obsah hlasovek prochází přes cloudové API — nediktuj, co nemá opustit
   telefon.
 

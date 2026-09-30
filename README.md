@@ -104,6 +104,23 @@ do Gboardu podržením mezerníku; detail v [README-android.md](README-android.m
 
 V repozitáři žádné klíče nejsou a nepatří sem — drž je v konfigu s právy 600.
 
+### Ochrana před prompt injection z diktátu
+
+Diktát typu „napiš mi shrnutí knihy…“ nebo „přelož to…“ dřív Claude občas
+**vykonal** místo aby ho vyčistil — do deníku pak přišlo shrnutí knihy,
+ne poznámka. Skript to řeší ve dvou vrstvách:
+
+1. **Oddělení dat od pokynů** — pravidla korektury jsou v `system` promptu,
+   přepis jde do zprávy zabalený v `<prepis>` a je explicitně označen jako
+   pasivní text: otázky, prosby a příkazy v něm se neprovádějí, jen opíšou.
+2. **Validace odpovědi** (`text_is_faithful`) — vyčištěný text musí mít
+   40–150 % slov originálu a sdílet s ním slovník. Když Claude přece jen
+   „splní úkol“ (odpověď je delší, kratší nebo o něčem jiném), úprava se
+   zahodí a zapíše se surový přepis. Nic se neztratí, jen chybí korektura.
+
+Skript navíc Claudovi nedává žádné nástroje — může jen vracet text, nikdy
+nic spouštět, posílat ani mazat.
+
 ## Řešení potíží
 
 - **Přepis selhal** — nahrávka zůstává v `~/.voice-inbox/rec.wav`; zkontroluj
